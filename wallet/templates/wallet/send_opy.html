@@ -1,0 +1,86 @@
+{% extends "app_user/app_user.html" %}
+{% load static %}
+{% block content %}                
+                <div class="user-content">
+                    <div class="user-panel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="tile-item tile-primary">
+                                    <div class="tile-bubbles"></div>
+                                    <h6 class="tile-title">ICO TOKEN BALANCE</h6>
+                                    <h1 class="tile-info">120,000,000 IC0X</h1>
+                                    <ul class="tile-list-inline">
+                                        <li>1.240 BTC</li>
+                                        <li>19.043 ETH</li>
+                                        <li>6,500.13 USD</li>
+                                    </ul>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="tile-item tile-light">
+                                    <div class="tile-bubbles"></div>
+                                    <h6 class="tile-title">YOUR CONTRIBUTION</h6>
+                                    <ul class="tile-info-list">
+                                        <li><span>1.646</span>ETH</li>
+                                        <li><span>~</span>BTC</li>
+                                        <li><span>5,940</span>USD</li>
+                                    </ul>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                        <div class="info-card info-card-bordered">
+                            <div class="row align-items-center">
+                               
+                                <div class="col-sm-12">
+                                    <div class="gaps-1x"></div>
+                            <h5 class="user-panel-subtitle">02. Set amount of ICOX tokens you would like to purchase</h5>
+                            <p>To become a part of the ICO Crypto project and purchase of ICOX token will only be possible after payment made and receving an approval.  As you like to participate our project, please select payment method and enter the amount of ICOX tokens you wish to purchase. You can buy ICOX tokens using ETH, BTC, LTC or USD. </p>
+                            <div class="gaps-1x"></div>
+                            <form method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="payment-calculator">
+                                        <div class="payment-get">
+                                            <label for="paymentGet">Reciever Address</label>
+                                            <div class="payment-input">
+                                                <input name="receiver" class="input-bordered" type="text" id="paymentGet" value="1200">
+                                                <span class="payment-get-cur payment-cal-cur">paste</span>    
+                                            </div>
+                                        </div>
+                                        <em class="ti ti-exchange-vertical"></em>
+                                        <div class="payment-from">
+                                            <label for="paymentFrom">Amount</label>
+                                            <div class="payment-input">
+                                                <input name="amount" class="input-bordered" type="text" id="paymentFrom" value="600" placeholder="enter receving Address">
+                                                <span class="payment-from-cur payment-cal-cur">OPY</span>    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gaps-2x d-md-none"></div>
+                                </div><!-- .col -->
+                                <div class="col-md-4">
+                                    <div class="payment-bonus">
+                                        <h6 class="payment-bonus-title">Approve</h6>
+                                        <button class="btn btn-primary">approve</button>
+                                        
+                                    </div>
+                                    <div class="gaps-1x d-md-none"></div>
+                                </div><!-- .col -->
+
+                            </div><!-- .row -->
+                          </form>
+                                </div>
+                            </div>
+                        </div><!-- .info-card -->
+                        
+                        
+                        
+                        
+                    </div><!-- .user-panel -->
+                </div><!-- .user-content -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- UserWraper End -->
+{% endblock %}

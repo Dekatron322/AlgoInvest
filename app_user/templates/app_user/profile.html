@@ -1,0 +1,140 @@
+{% extends "app_user/app_user.html" %}
+{% load static %}
+{% block content %}
+                
+                <div class="user-content">
+                    <div class="user-panel">
+                        <h2 class="user-panel-title">Profile Information</h2>
+                        <div class="alert-box alert-primary">
+                            <div class="alert-txt"><em class="ti ti-check tranx-status tranx-status-approved"></em>Account Verified</div>
+                            <a href="#" class="btn btn-sm btn-success">Verified</a>
+                        </div><!-- .alert-box -->
+                        <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#personal-data">Personal Data</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#wallet-address">Wallet Address</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#notification">Notification</a>
+                            </li>
+                        </ul><!-- .nav-tabs-line -->
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="personal-data">
+                                <form action="#">
+                                    
+                                    
+                                    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-item input-with-label">
+                                                <label for="date-of-birth" class="input-item-label">Full Name</label>
+                                                <p>{{ app_user.full_name }}</p>
+                                            </div><!-- .input-item -->
+                                        </div><!-- .col -->
+                                        <div class="col-md-6">
+                                            <div class="input-item input-with-label">
+                                                <label for="date-of-birth" class="input-item-label">ID</label>
+                                                <p>{{ app_user.id_number }}</p>
+                                            </div><!-- .input-item -->
+                                        </div><!-- .col -->
+                                        <div class="col-md-6">
+                                            <div class="input-item input-with-label">
+                                                <label for="date-of-birth" class="input-item-label">Mobile Number</label>
+                                                <p>{{ app_user.phone_no }}</p>
+                                            </div><!-- .input-item -->
+                                        </div><!-- .col -->
+                                        <div class="col-md-6">
+                                            <div class="input-item input-with-label">
+                                                <label for="date-of-birth" class="input-item-label">Address Line</label>
+                                                <p>{{ app_user.house_address }}</p>
+                                            </div><!-- .input-item -->
+                                        </div><!-- .col -->
+                                        <div class="col-md-6">
+                                            <div class="input-item input-with-label">
+                                                <label for="date-of-birth" class="input-item-label">City</label>
+                                                <p>{{ app_user.state_of_origin }}</p>
+                                            </div><!-- .input-item -->
+                                        </div><!-- .col -->
+                                        <div class="col-md-6">
+                                            <div class="input-item input-with-label">
+                                                <label for="nationality" class="input-item-label">Nationality</label>
+                                                <p>{{ app_user.country }}</p>
+                                            </div><!-- .input-item -->
+                                        </div><!-- .col -->
+                                    </div><!-- .row -->
+                                    <div class="gaps-1x"></div><!-- 10px gap -->
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                        <button class="btn btn-primary">Update</button>
+                                        <div class="gaps-2x d-sm-none"></div>
+                                        <span class="color-success"><em class="ti ti-check-box"></em> All Changes are saved</span>
+                                    </div>
+                                </form><!-- form -->
+                            </div><!-- .tab-pane -->
+                            <div class="tab-pane fade" id="wallet-address">
+                                <p>In order to receive your ICOX Tokens, please select your wallet addres and you have to put the address below input box. You will receive ICOX tokens to this address after the Token Sale end.</p>
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-item input-with-label">
+                                                <label for="swalllet" class="input-item-label">Select Wallet </label>
+                                                <select class="input-bordered" name="swalllet" id="swalllet">
+                                                    <option value="eth">Ethereum</option>
+                                                    <option value="dac">DashCoin</option>
+                                                    <option value="bic">BitCoin</option>
+                                                </select>
+                                            </div><!-- .input-item -->
+                                        </div><!-- .col -->
+                                    </div><!-- .row -->
+                                    <div class="input-item input-with-label">
+                                        <label for="token-address" class="input-item-label">Your Address for tokens:</label>
+                                        <input class="input-bordered" type="text" id="token-address" name="token-address" value="0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae">
+                                        <span class="input-note">Note: Address should be ERC20-compliant.</span>
+                                    </div><!-- .input-item -->
+                                    <div class="gaps-2x"></div>
+                                    <div class="note note-plane note-danger">
+                                        <em class="fas fa-info-circle"></em>
+                                        <p>DO NOT USE your exchange wallet address such as Kraken, Bitfinex, Bithumb, Binance etc. You can use MetaMask, MayEtherWallet, Mist wallets etc. Do not use the address if you don’t have a private key of the your address. You WILL NOT receive ICOX Tokens and WILL LOSE YOUR FUNDS if you do.</p>
+                                    </div>
+                                    <div class="gaps-3x"></div>
+                                    <div class="gaps-1x"></div><!-- 10px gap -->
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                        <button class="btn btn-primary">Update</button>
+                                        <div class="gaps-2x d-sm-none"></div>
+                                        <span class="color-success"><em class="ti ti-check-box"></em> Saved your wallet address</span>
+                                    </div>
+                                </form><!-- form -->
+                            </div><!-- .tab-pane -->
+                            <div class="tab-pane fade" id="notification">
+                                <p>You can manage your all kind of notification from here.</p>
+                                <div class="gaps-1x"></div>
+                                <ul class="notification-list">
+                                    <li>
+                                        <span>Notify me by email about resumption of sales</span>
+                                        <div class="padl-2x"><input class="input-switch" type="checkbox" id="rsmpts"><label for="rsmpts"></label></div>
+                                    </li>
+                                    <li>
+                                        <span>Notify me by email for latest news</span>
+                                        <div class="padl-2x"><input class="input-switch" type="checkbox" checked id="lnews"><label for="lnews"></label></div>
+                                    </li>
+                                    <li>
+                                        <span>Alert me by email for unusual activity.</span>
+                                        <div class="padl-2x"><input class="input-switch" type="checkbox" checked id="unuact"><label for="unuact"></label></div>
+                                    </li>
+                                </ul>
+                                <div class="gaps-4x"></div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span></span>
+                                    <span class="color-success"><em class="ti ti-check-box"></em> Update Notification Settings</span>
+                                </div>
+                            </div><!-- .tab-pane -->
+                        </div><!-- .tab-content -->
+                    </div><!-- .user-panel -->
+                </div><!-- .user-content -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- UserWraper End -->
+{% endblock %}

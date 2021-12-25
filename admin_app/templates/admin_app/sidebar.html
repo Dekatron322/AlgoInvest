@@ -1,0 +1,98 @@
+{% load static %}
+<!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #0e1326">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link" style="background-color: #0e1326">
+      <img src="{% static 'admin_app/dist/img/AdminLTELogo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Admin Dashboard</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{{ admin_app.profile_photo.url }}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{{ request.user }}</a>
+        </div>
+      </div>
+
+       <style type="text/css">
+        .nav-link.made{
+          background-color: #f39c12;
+          color:  #1f2d3d !important;
+        }
+      </style>
+
+      <!-- SidebarSearch Form -->
+      
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            {% url 'admin_app:index' as index %}
+            <a href="{{ index }}" class="nav-link {% if index == request.path %} made {% endif %}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Home
+              </p>
+            </a>
+            
+          </li>
+          <li class="nav-item">
+            {% url 'admin_app:investors' as investors %}
+            <a href="{% url 'admin_app:investors' %}" class="nav-link {% if investors == request.path %} made {% endif %}">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Investor 
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            {% url 'admin_app:investments' as investments %}
+            <a href="{% url 'admin_app:investments' %}" class="nav-link {% if investments == request.path %} made {% endif %}">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Investments 
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            {% url 'admin_app:withdraws' as withdraws %}
+            <a href="{% url 'admin_app:withdraws' %}" class="nav-link {% if withdraws == request.path %} made {% endif %}">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Withdrawal Requests
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            {% url 'admin_app:transaction' as transaction %}
+            <a href="{% url 'admin_app:transaction' %}" class="nav-link {% if transaction == request.path %} made {% endif %}">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Transaction Sheets 
+              </p>
+            </a>
+          </li>
+            
+          <li class="nav-item">
+            <a href="{% url 'admin_app:sign_out' %}" class="nav-link">
+              <i class="nav-icon fas fa-lock text-warning"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

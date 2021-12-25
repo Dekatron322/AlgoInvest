@@ -1,0 +1,84 @@
+{% extends "app_user/app_user.html" %}
+{% load static %}
+{% block content %}
+
+
+   
+                
+                <div class="user-content">
+                    <div class="user-panel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="tile-item tile-primary" style="background-color: #0c0c0c;">
+                                    <div class="tile-bubbles"></div>
+                                    <h6 class="tile-title">Algo Balance</h6>
+                                    <h1 class="tile-info">{{ bnb_balance }} ALGO</h1>
+                                    <ul class="tile-list-inline">
+                                        <li>1.240 BTC</li>
+                                        <li>19.043 ETH</li>
+                                        <li>6,500.13 USD</li>
+                                    </ul>
+                                </div>
+                            </div><!-- .col -->
+                            <div class="col-md-6">
+                                <div class="tile-item tile-primary" style="background-color: maroon;">
+                                    <div class="tile-bubbles"></div>
+                                    <h6 class="tile-title">OPY Balance</h6>
+                                    <h1 class="tile-info">{{ bep_balance }} OPY</h1>
+                                    <ul class="tile-list-inline">
+                                        <li>1.240 BTC</li>
+                                        <li>19.043 ETH</li>
+                                        <li>6,500.13 USD</li>
+                                    </ul>
+                                </div>
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                        <div class="info-card info-card-bordered">
+                            <div class="row align-items-center">
+                               
+                                <div class="col-sm-12">
+                                    <h4>Thank you for your interest towards to our ICO Crypto Projects</h4>
+                                    <p>You can contribute ICOX tokens in <a href="#">Contributions</a> section.</p>
+                                    <p>You can get a quick response to any questions, and chat with the project in our Telegram: <a href="htts://t.me/icocrypto">htts://t.me/icocrypto</a></p>
+                                    <p>Don’t hesitate to invite your friends! If your invited referral purchased token then both of you get 10% bonus.</p>
+
+                                  <ul class="btn-grp guttar-10px">
+                                    <li><a href="{% url 'wallet:send_bnb' %}" class="btn btn-xs btn-success">Send Algo</a></li>
+                                    <li><a href="{% url 'wallet:send_opy' %}" class="btn btn-xs btn-warning">Send Opy</a></li>
+                                    <li><div class="refferal-info">
+                            <span class="refferal-copy-feedback copy-feedback"></span>
+                            <em class="fas fa-link"></em>
+                            <input type="text" class="refferal-address" value="algo7d264f90653733592" disabled>
+                            <button class="refferal-copy copy-clipboard btn-success" data-clipboard-text="https://demo.themenio.com/ico?ref=7d264f90653733592"><em class="ti ti-files"></em></button>
+                        </div><!-- .refferal-info --> <!-- @updated on v1.0.1 --></li>
+                                  </ul>
+                                </div>
+                            </div>
+                        </div><!-- .info-card -->
+                        <div class="token-card">
+                            <div class="token-info">
+                                <span class="token-smartag">ICO Phase 2</span>
+                                <h2 class="token-bonus">20% <span>Current Bonus</span></h2>
+                                <ul class="token-timeline">
+                                    <li><span>START DATE</span>14 Jul 2018</li>
+                                    <li><span>END DATE</span>25 Aug 2018</li>
+                                </ul>
+                            </div>
+                            <div class="token-countdown">
+                                <span class="token-countdown-title">THE BONUS END IN</span>
+                                <div class="token-countdown-clock" data-date="2021/08/10"></div>
+                            </div>
+                        </div><!-- .token-card -->
+                        
+                        
+                        
+                    </div><!-- .user-panel -->
+                </div><!-- .user-content -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- UserWraper End -->
+
+
+
+{% endblock %}

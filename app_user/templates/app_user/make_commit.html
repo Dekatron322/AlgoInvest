@@ -1,0 +1,49 @@
+{% extends "app_user/app_user.html" %}
+{% load static %}
+{% block content %}
+
+
+                
+                <div class="user-content">
+                    <div class="user-panel">
+                        <h2 class="user-panel-title">Activate Payment</h2>
+                        <h5>Invite your friends and family and recive free tokens</h5>
+                        <p><strong>Each member recives a unique referral link to share with friends and family and recive a bonus - 5% of the value of their contribution.</strong></p>
+                        <p>The referral link may be used during a token contribution, in the pre-sale and the ICO.</p>
+                        <p>Imagine giving your unique referral link to your crypto-friend and he or she contributes tokens using your link, the bonus will be sent to your account automatically. The strategy is simple: the more links you send to your collagues, family and friends - the more tokens you may earn!</p>
+                        <h6>My unique referral link</h6>
+                        
+                        
+                        
+                
+                  <p>Make Payment</p>
+                  
+                  <p>Pay {{ package_type }}BNB from your OPY wallet to us!</p>
+                  
+
+                  <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <button class="btn btn-warning" type="submit">confirm!</button>
+                    
+                  </form>
+
+              
+
+
+                
+                
+                        
+                </div><!-- .user-content -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- UserWraper End -->
+    
+    
+
+
+
+
+
+{% endblock %}

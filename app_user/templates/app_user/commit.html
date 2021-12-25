@@ -1,0 +1,101 @@
+{% extends "app_user/app_user.html" %}
+{% load static %}
+{% block content %}
+
+                
+                <div class="user-content">
+                    <div class="user-panel">
+                      <h2 class="user-panel-title">Buy Tokens</h2>
+                        <form action="#">
+                            <h5 class="user-panel-subtitle">01. Select the payment method and calculate token price</h5>
+                            <div class="gaps-1x"></div>
+                            <div class="payment-list">
+                                <div class="row">
+
+                                   <div class="col-md-4 col-sm-6">
+                                        <div class="payment-item">
+                                            <input class="payment-check" type="radio" id="payeth" name="payOption" value="tranxETH" checked>
+                                            <label for="payeth">
+                                                <div class="payment-icon payment-icon-eth"><img src="http://superstaressentials.com/assets/images/bronzepackage.png" alt="icon"></div>
+                                                <span class="payment-cur">Ethereum</span>
+                                            </label>
+                                            <span>@ 0.1 ETH</span>
+                                            <a href="{% url 'app_user:make_commit' '0.001' %}" class="btn btn-xs btn-success">stake</a>
+                                        </div>       
+                                   </div><!-- .col -->
+                                   <div class="col-md-4 col-sm-6">
+                                        <div class="payment-item">
+                                            <input class="payment-check" type="radio" id="paylightcoin" name="payOption" value="tranxLTC">
+                                            <label for="paylightcoin">
+                                                <div class="payment-icon payment-icon-ltc"><img class="payment-icon" src="https://theislandnow.com/wp-content/uploads/2018/01/gold-package-e1517317572725.png" alt="icon"></div>
+                                                <span class="payment-cur">Litecoin</span>
+                                            </label>
+                                            <span>@ 0.1 LTC</span>
+                                             <a href="{% url 'app_user:make_commit' '0.002' %}" class="btn btn-xs btn-success">stake</a>
+                                            
+                                        </div>
+                                   </div><!-- .col -->
+                                   <div class="col-md-4 col-sm-6" >
+                                       <div class="payment-item" >
+                                            <input class="payment-check" type="radio" id="paybtc" name="payOption" value="tranxBTC" >
+                                            <label for="paybtc" >
+                                                <div class="payment-icon payment-icon-btc"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Gb4ocZaKNbLLRjTFMM7CiEjmFnbmRuoqYI9TaKXptwGr92CPtQiLbOu008LIaipf_wQ&usqp=CAU"></em></div>
+                                                <span class="payment-cur">Bitcoin</span>
+                                            </label>
+                                            <span>@ 0.05 BTC</span>
+                                             <a href="{% url 'app_user:make_commit' '0.003' %}" class="btn btn-xs btn-success">stake</a>
+                                           
+                                           
+                                        </div>
+                                   </div><!-- .col -->
+                                   
+                                </div><!-- .row -->
+                        <div class="row">
+                        
+                           
+                           
+
+                        </div><!-- .row -->
+                        <div class="info-card info-card-bordered">
+                            <div class="row align-items-center">
+                                <div class="col-sm-3">
+                                    <div class="info-card-image">
+                                        <img src="images/vector-a.png" alt="vector">
+                                    </div>
+                                    <div class="gaps-2x d-md-none"></div>
+                                </div>
+                                <div class="col-sm-9">
+                                    <h4>Thank you for your interest towards to our ICO Crypto Projects</h4>
+                                    <p>You can contribute ICOX tokens in <a href="#">Contributions</a> section.</p>
+                                    <p>You can get a quick response to any questions, and chat with the project in our Telegram: <a href="htts://t.me/icocrypto">htts://t.me/icocrypto</a></p>
+                                    <p>Don’t hesitate to invite your friends! If your invited referral purchased token then both of you get 10% bonus.</p>
+                                </div>
+                            </div>
+                        </div><!-- .info-card -->
+                        <div class="token-card">
+                            <div class="token-info">
+                                <span class="token-smartag">ICO Phase 2</span>
+                                <h2 class="token-bonus">20% <span>Current Bonus</span></h2>
+                                <ul class="token-timeline">
+                                    <li><span>START DATE</span>14 Jul 2018</li>
+                                    <li><span>END DATE</span>25 Aug 2018</li>
+                                </ul>
+                            </div>
+                            <div class="token-countdown">
+                                <span class="token-countdown-title">THE BONUS END IN</span>
+                                <div class="token-countdown-clock" data-date="2021/08/10"></div>
+                            </div>
+                        </div><!-- .token-card -->
+                        
+                       
+                    </div><!-- .user-panel -->
+                </div><!-- .user-content -->
+            </div><!-- .d-flex -->
+        </div><!-- .container -->
+    </div>
+    <!-- UserWraper End -->
+    
+
+
+
+{% endblock %}
