@@ -59,15 +59,13 @@
                             <div class="row align-items-center">
                                 <div class="col-sm-3">
                                     <div class="info-card-image">
-                                        <img src="images/vector-a.png" alt="vector">
+                                        <img src="{% static 'images/vector-a.png' %}" alt="vector">
                                     </div>
                                     <div class="gaps-2x d-md-none"></div>
                                 </div>
                                 <div class="col-sm-9">
-                                    <h4>Thank you for your interest towards to our ICO Crypto Projects</h4>
-                                    <p>You can contribute ICOX tokens in <a href="#">Contributions</a> section.</p>
-                                    <p>You can get a quick response to any questions, and chat with the project in our Telegram: <a href="htts://t.me/icocrypto">htts://t.me/icocrypto</a></p>
-                                    <p>Don’t hesitate to invite your friends! If your invited referral purchased token then both of you get 10% bonus.</p>
+                                    <h4>Welocome to Blockchain Invest</h4>
+                                    <p>We’re reinventing the global equity blockchian – that is secure, smart and easy-to-use platform,</p> <p>and completely disrupting the way businesses raise capital and the way investments are made.</p>
                                 </div>
                             </div>
                         </div><!-- .info-card -->
@@ -88,36 +86,42 @@
                         
                         <div class="gaps-3x"></div>
                         <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>PreSale</th>
-                                        <th>Sale Stage 1</th>
-                                        <th>Sale Stage 2</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><span>Start Date</span>03 July 2018</td>
-                                        <td><span>Start Date</span>15 August 2018</td>
-                                        <td><span>Start Date</span>28 October 2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span>End Date</span>19 July 2018</td>
-                                        <td><span>End Date</span>02 September 2018</td>
-                                        <td><span>End Date</span>16 November 2018</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span>Bonus</span>30%</td>
-                                        <td><span>Bonus</span>20%</td>
-                                        <td><span>Bonus</span>10%</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span>Soft Cap</span>$ 20M</td>
-                                        <td><span>Hard Cap</span>$ 50M</td>
-                                        <td><span>Hard Cap</span>$ 30M</td>
-                                    </tr>
-                                </tbody>
+                            <table class="data-table tranx-table">
+                            <thead>
+                                <tr>
+                                    <th class="tranx-status"></th>
+                                    <th class="tranx-no"><span>TNX NO</span></th>
+                                    <th class="tranx-token"><span>Package</span></th>
+                                    <th class="tranx-amount"><span>Invested</span></th>
+                                    <th class="tranx-from"><span>Harvested</span></th>
+                                    <th class="tranx-action"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              {% for item in investments %}
+                                <tr>{% if item.ha_payment_status == False %}
+                                    <td class="tranx-status tranx-status-pending"><span class="d-none">Pending</span><em class="ti ti-alert"></em></td>
+                                    {% else %}
+                                    <td class="tranx-status tranx-status-approved"><span class="d-none">Approved</span><em class="ti ti-check"></em></td>
+                                    {% endif %}
+                                    <td class="tranx-no"><span>ICIYOW0102</span>{{ item.pub_date }}</td>
+                                    <td class="tranx-token"><span>{{ item.package_type }}</span>ICOX</td>
+                                    <td class="tranx-amount"><span>BNB{{ item.amount }}</span>({% if item.payment_status_k == False %}Not Verified{% else %}Verified
+                              {% endif %}) 
+                              <em class="fas fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="1 ETH = 100 ICOX"></em></td>
+                                    <td class="tranx-from"><span>OPY{{ item.harvest_amount }}</span>({% if item.ha_payment_status == False %}
+                                      Not Paid
+                                    {% else %}
+                                      Paid
+                                    {% endif %})
+                                  </td>
+                                    <td class="tranx-action">
+                                        <a href="#" data-toggle="modal" data-target="#tranxApproved"><em class="ti ti-more-alt"></em></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                             </table>
                         </div>
                         

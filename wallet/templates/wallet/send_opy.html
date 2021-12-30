@@ -32,11 +32,7 @@
                             <div class="row align-items-center">
                                
                                 <div class="col-sm-12">
-                                    <div class="gaps-1x"></div>
-                            <h5 class="user-panel-subtitle">02. Set amount of ICOX tokens you would like to purchase</h5>
-                            <p>To become a part of the ICO Crypto project and purchase of ICOX token will only be possible after payment made and receving an approval.  As you like to participate our project, please select payment method and enter the amount of ICOX tokens you wish to purchase. You can buy ICOX tokens using ETH, BTC, LTC or USD. </p>
-                            <div class="gaps-1x"></div>
-                            <form method="post">
+                                    <form method="post">
                             {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-8">
@@ -70,6 +66,13 @@
 
                             </div><!-- .row -->
                           </form>
+                                    <div class="gaps-1x"></div>
+                            <h5 class="user-panel-subtitle">01. Verify Network</h5>
+                            <p>Make sure the recipient is on Algo Network, if you are sending to an exchange account, please verify they are accepting assets on Algorand network. </p>
+                             <h5 class="user-panel-subtitle">02. Do Not</h5>
+                            <p>Do not send assets directly to a crowdfund or ICO. you may risk loosing your assets forever</p>
+                            <div class="gaps-1x"></div>
+                            
                                 </div>
                             </div>
                         </div><!-- .info-card -->
